@@ -11,7 +11,7 @@ export default class ResumeCenter extends Component {
                         <div className="col-xl-4 offset-xl-1">
                             <div className="hero-content h1-content">
                                 <h3 className="wow fadeInUp" data-wow-delay="0.6s">Hello,</h3>
-                                <h2 className="wow fadeInUp" data-wow-delay="0.8s">I'm Prateek
+                                <h2 className="wow fadeInUp" data-wow-delay="0.8s">I am Prateek
                                     <span>Madaan</span>
                                 </h2>
                                 <p className="wow fadeInUp" data-wow-delay="1s">Full stack Web Developer | Machine Learning Enthusiast | MathematicsGeek.</p>
