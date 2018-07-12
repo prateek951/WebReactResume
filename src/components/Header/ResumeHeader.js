@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import MobileMenu from '../Menu/MobileMenu';
+import {NavLink} from 'react-router-dom';
 
 export class ResumeHeader extends Component{
 
     state = {
-        items: ['Home','Education','Skills','Projects','Contact','Experience']
+        items: [
+            { name: 'Home', route: '/'},
+            { name: 'Skills', route: '/skills'},
+            { name: 'Projects', route: '/projects'},
+            { name: 'Contact', route: '/contact'},
+            { name: 'Education', route: '/edu'},
+            { name: 'Experience', route: '/exp'}
+        ]
         ,open: false
     }
     renderItems(){
-        return this.state.items.map(item => <li><a>{item}</a></li>)
+        return this.state.items.map(item => <li><NavLink to={item.route}>{item.name}</NavLink></li>)
     }
     openSideNav = () => {
         let { open } = this.state;
@@ -27,9 +35,9 @@ export class ResumeHeader extends Component{
                 <div className="row align-items-center">
                     <div className="col-lg-2">
                         <div className="logo">
-                            <a href="index-2.html">
-                                <img src="assets/images/icon/logo.png" alt="image"/>
-                            </a>
+                            <NavLink to={"/"}>
+                                <img src="../../assets/images/icon/logo.png" alt="image"/>
+                            </NavLink>
                         </div>
                     </div>
                     <div className="col-lg-8 d-none d-lg-block">
