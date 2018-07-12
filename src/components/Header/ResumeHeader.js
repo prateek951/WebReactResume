@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
+import MobileMenu from '../Menu/MobileMenu';
 
 export class ResumeHeader extends Component{
+
     state = {
         items: ['Home','Education','Skills','Projects','Contact','Experience']
+        ,open: false
     }
     renderItems(){
         return this.state.items.map(item => <li><a>{item}</a></li>)
     }
+    openSideNav = () => {
+        let { open } = this.state;
+        this.setState({
+            open: !open
+        })
+    }
     render(){
+        console.log('inside the render method of resume header',this.state.open);
     return (
         <div>
+            
         <header>
         <div className="header-area wow fadeIn" data-wow-duration="3s">
             <div className="container-fluid">
@@ -31,7 +42,7 @@ export class ResumeHeader extends Component{
                         </div>
                     </div>
                     <div className="col-md-2 d-none d-lg-block text-right">
-                        <div className="humberger">
+                        <div className="humberger" onClick={this.openSideNav}>
                             <span></span>
                             <span></span>
                             <span></span>
@@ -43,7 +54,8 @@ export class ResumeHeader extends Component{
                 </div>
             </div>
         </div>
-    </header>    
+    </header>
+        <MobileMenu isopen={this.state.open}/>
     </div>
     );
 }
