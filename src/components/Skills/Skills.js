@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+!import React, { Component } from 'react';
 
 export class Skills extends Component {
     constructor(){
@@ -31,7 +31,7 @@ export class Skills extends Component {
     
     render() {
         var jsx = '';
-        if(jsx){
+        if(!jsx){
             for (let i = 0; i < this.state.skills.length; i++) {
                 const element = this.state.skills[i];
                 // console.log(element);
