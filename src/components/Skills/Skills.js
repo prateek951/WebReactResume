@@ -1,55 +1,54 @@
 import React, { Component } from 'react';
 
 export class Skills extends Component {
-    state = {
-        skills : [
-            {
-                name: 'Vue.js',
-                prop: '75%',
-                wowDelay: 1
-            },
-            {
-                name: 'Angular6',
-                prop: '70%',
-                wowDelay: 2
-            },
-            {
-                name: 'Nodejs and Expressjs',
-                prop: '90%',
-                wowDelay: 3
-            },
-            {
-                name: 'JavaScript',
-                prop: '85%',
-                wowDelay: 4
-            }
-        ]
+    constructor(){
+        super();
+        this.state = {
+            skills : [
+                {
+                    name: 'Vue.js',
+                    prop: '75%',
+                    wowDelay: 1
+                },
+                {
+                    name: 'Angular6',
+                    prop: '70%',
+                    wowDelay: 2
+                },
+                {
+                    name: 'Nodejs and Expressjs',
+                    prop: '90%',
+                    wowDelay: 3
+                },
+                {
+                    name: 'JavaScript',
+                    prop: '85%',
+                    wowDelay: 4
+                }
+            ]        
+        }
     }
-    renderItems(){
-        var jsx = '';
-       for (let i = 0; i < this.state.skills.length; i++) {
-           const element = this.state.skills[i];
-        //    console.log('inside the renderItems method');
-            jsx += `<div className="col-md-6">
-            <div className="s_skill-item wow fadeIn" data-wow-delay={element.wowDelay+'s'}>
-            <div className="s-text">{element.name}
-            <span>{element.prop}</span>
-             </div>
-               <div className="progress">
-                   <div className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{width: element.prop}}>
-                   </div>
-               </div>
-            </div>
-           </div>`;
-       }
-       return jsx;
-    }
-    // renderItems(){
-    //     return this.state.skills.map(skill => ``)
-    // }
     
     render() {
-        
+        var jsx = '';
+        if(jsx){
+            for (let i = 0; i < this.state.skills.length; i++) {
+                const element = this.state.skills[i];
+                // console.log(element);
+             //    console.log('inside the renderItems method');
+                 jsx += (<div className="col-md-6">
+                 <div className="s_skill-item wow fadeIn" data-wow-delay={element.wowDelay+'s'}>
+                 <div className="s-text">{element.name}
+                 <span>{element.prop}</span>
+                  </div>
+                    <div className="progress">
+                        <div className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{width: element.prop}}>
+                        </div>
+                    </div>
+                 </div>
+            </div>);
+        }
+        }      
         return (
             <div className="skills-area">
             <div className="container-fluid">
@@ -86,10 +85,11 @@ export class Skills extends Component {
                                 </div>
                             </div>
                             <div className="software-skill">
-                                <h2 className="skill-title wow fadeInUp" data-wow-delay="0.8s">Computer Software Skills</h2>
+                                <h2 className="skill-title wow fadeInUp" data-wow-delay="0.8s">Github Contributions</h2>
                                 <div className="software-skills">
                                     <div className="row">
-                                        {this.renderItems()}
+                                        {jsx}
+                                        <img src="http://ghchart.rshah.org/409ba5/prateek951" alt="prateek951's Blue Github Chart"/>                               
                                     </div>
                                 </div>
                             </div>

@@ -11,6 +11,7 @@ import Education from './components/Education/Education';
 import Experience from './components/Experience/Experience';
 
 class App extends Component {
+  
   render() {
     return (
         <div>
@@ -18,10 +19,10 @@ class App extends Component {
             <Switch>
               <Route path="/" exact component={ResumeCenter}/>
               <Route path="/contact" exact component={Contact}/>
-              <Route path="/exp" exact component={Experience}/>
               <Route path="/edu" exact component={Education}/>
               <Route path="/skills" exact component={Skills}/>
               <Route path="/projects" exact component={Projects}/>
+              <Route path="/exp" exact component={Experience}/>
             </Switch>
           <ResumeFooter/>     
         </div>  
